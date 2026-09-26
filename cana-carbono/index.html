@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cana-Carbono — projetar a planta para o material</title>
+<meta name="description" content="Proposta de investigação sobre a relação entre genótipo de cana, composição do bagaço, processo de carbonização e desempenho de hard carbon para baterias de íon-sódio.">
+<style>
+:root{--ink:#1a1a1a;--sub:#555;--line:#d8d4cc;--bg:#fdfcf9;--accent:#6b3f2a;--soft:#f4f1ea;--warn:#fff8e8}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;background:var(--bg);color:var(--ink);line-height:1.65;font-size:17px}
+.wrap{max-width:780px;margin:0 auto;padding:52px 24px 64px}
+header{border-bottom:2px solid var(--ink);padding-bottom:20px;margin-bottom:30px}
+.kicker{font-family:Helvetica,Arial,sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--sub);margin-bottom:12px}
+h1{font-size:30px;line-height:1.25;font-weight:normal}
+.pergunta{font-size:21px;line-height:1.5;font-style:italic;border-left:3px solid var(--accent);padding:4px 0 4px 20px;margin:8px 0 34px}
+h2{font-family:Helvetica,Arial,sans-serif;font-size:13px;letter-spacing:.11em;text-transform:uppercase;color:var(--sub);margin:34px 0 12px;padding-top:8px}
+p{margin-bottom:14px}
+a{color:var(--accent)}
+.refcite{color:var(--accent);text-decoration:none;font-family:Helvetica,Arial,sans-serif;font-size:85%;vertical-align:super}
+.refback{color:var(--accent);text-decoration:none;font-size:80%}
+:target{background:#fdf3e3;border-radius:4px;transition:background .3s}
+.cadeia{display:flex;flex-wrap:wrap;align-items:stretch;gap:8px;margin:16px 0 8px}
+.bloco{flex:1 1 140px;min-width:130px;border:1px solid var(--line);border-radius:8px;padding:12px;background:#fff}
+.bloco b{display:block;font-family:Helvetica,Arial,sans-serif;font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px}
+.bloco span{font-size:14px;color:var(--sub);line-height:1.45;display:block}
+.seta{align-self:center;color:var(--sub);flex:0 0 auto;display:flex;flex-direction:column;align-items:center;line-height:1.3;min-width:52px}
+.seta small{font-family:Helvetica,Arial,sans-serif;font-size:10px;letter-spacing:.08em;text-transform:uppercase}
+.legenda,.note,.status{font-size:14.5px;color:var(--sub)}
+.legenda{margin-top:4px}
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14.5px}
+th{font-family:Helvetica,Arial,sans-serif;font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--sub);text-align:left;border-bottom:1.5px solid var(--ink);padding:6px 8px}
+td{border-bottom:1px solid var(--line);padding:8px;vertical-align:top}
+td:first-child{font-weight:bold}
+.note{border-top:1px solid var(--line);padding-top:10px;margin-top:6px}
+.lacuna{background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin:16px 0}
+.piloto{border:1.5px dashed var(--accent);border-radius:10px;padding:16px 20px;margin:12px 0;background:#fbf7f2}
+.piloto b{font-family:Helvetica,Arial,sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:6px}
+.status{background:var(--warn);border:1px solid #e7d49a;border-radius:8px;padding:12px 16px;margin:14px 0}
+.quem{background:var(--ink);color:#f2efe8;border-radius:10px;padding:22px 24px;margin-top:40px}
+.quem h2{color:#bbb;margin:0 0 10px;padding:0}
+.quem p{font-size:15px;color:#ddd;margin-bottom:10px}
+.quem a{color:#fff}
+ol.refs{font-size:13.5px;color:var(--sub);padding-left:22px;margin-top:12px}
+ol.refs li{margin-bottom:9px}
+@media print{body{background:#fff;font-size:11pt}.wrap{max-width:none;padding:0}.quem{color:#000;background:#fff;border:1px solid #999}.quem p{color:#000}a{color:#000;text-decoration:none}.refback{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">Proposta de investigação · versão revisada em 24/09/2026</div>
+  <h1>Cana-Carbono: projetar a planta para o material</h1>
+</header>
+<p class="pergunta">“Podemos começar pelo material que queremos obter — um hard carbon de bom desempenho para baterias de íon-sódio — e investigar quais propriedades da cana influenciam esse resultado?”</p>
+
+<h2>Resumo da proposta</h2>
+<p>Hard carbon é um carbono não grafitizável usado como ânodo em baterias de íon-sódio. O desempenho final depende do precursor, do pré-tratamento, da carbonização e da formulação do eletrodo. A proposta deste documento é testar, em primeiro lugar sem edição genômica, se diferenças entre genótipos e épocas de colheita continuam detectáveis quando a rota de processamento é mantida constante.</p>
+<p>A hipótese é deliberadamente limitada: a planta pode alterar a composição e a pureza do precursor, mas não se presume que um gene específico determine sozinho a capacidade eletroquímica. A arquitetura de poros, os defeitos, a química superficial e a eficiência coulômbica também dependem fortemente do processo.</p>
+<div class="status">
+<p style="margin-bottom:0"><b>Abstract.</b> The performance of hard carbon — the dominant anode of sodium-ion batteries — results from the interplay of precursor, pretreatment, carbonization, and electrode formulation. Machine-learning meta-analyses link this performance to lignin content and structure, and a controlled experiment on sugarcane bagasse showed that lignin purity shifts capacity and initial Coulombic efficiency. No study identified in the literature search, however, has varied sugarcane genotype under a frozen processing protocol. This proposal designs that test: a germplasm panel (conventional and energy cane) × two harvest windows × a single carbonization route, with no gene editing in the pilot phase. The hypothesis is deliberately narrow: the plant alters precursor composition and purity, but no single gene is presumed to determine performance. If the genotype signal survives process control, lignin editing gains justified targets; if not, a real scientific question is answered at minimal cost.</p>
+</div>
+<div class="status"><b>Estado da evidência.</b> Os resultados abaixo estão separados em três níveis: resultado direto de artigo, extrapolação de outro sistema vegetal ou de outra rota de síntese, e hipótese a ser testada. A literatura consultada não permite afirmar ainda uma relação causal “genótipo de cana → hard carbon”.</div>
+
+<h2 id="sec-glossario">Glossário básico</h2>
+<div class="status">
+<p><b>Do lado dos materiais:</b>
+<b>Hard carbon:</b> carbono não grafitizável; armazena sódio em poros fechados e entre camadas desordenadas. <a href="#sec-demonstrado" class="refback">→ onde aparece com dados</a>
+<b>ICE:</b> eficiência coulômbica inicial — fração da carga do primeiro ciclo que é recuperável; sua perda é dominada pela formação da SEI, a camada de interface que se forma na superfície do carbono no primeiro contato com o eletrólito. <a href="#sec-carbono" class="refback">→ onde decide</a>
+<b>Meia-célula:</b> ensaio do material contra sódio metálico; isola o desempenho do material sem replicar a célula comercial. <a href="#sec-carbono" class="refback">→ onde decide</a>
+<b>d<sub>002</sub> e I<sub>D</sub>/I<sub>G</sub>:</b> distância entre camadas de carbono (DRX) e razão de desordem (Raman). <a href="#sec-carbono" class="refback">→ onde decide</a>
+<b>BET/SAXS:</b> área superficial e porosidade; medem o espaço disponível, não o que nele acontece. <a href="#sec-carbono" class="refback">→ onde decide</a></p>
+<p style="margin-bottom:0"><b>Do lado da biotecnologia:</b>
+<b>Precursor:</b> a matéria-prima que, carbonizada, origina o carbono ativo — aqui, o bagaço e sua fração orgânica. <a href="#sec-demonstrado" class="refback">→ onde aparece</a>
+<b>Lignina / hemicelulose / celulose:</b> os três polímeros da parede celular; a lignina é aromática e rende mais carbono, a hemicelulose é a fração que mais gera defeitos na carbonização <a href="#ref-4" class="refcite">[4]</a>. <a href="#sec-planta" class="refback">→ onde decide</a>
+<b>Genótipo:</b> variedade geneticamente distinta — o que o piloto variará; <b>KK3:</b> cultivar tailandesa em que a edição de <i>SoLIM</i> foi demonstrada <a href="#ref-5" class="refcite">[5]</a>. <a href="#sec-indireta" class="refback">→ onde aparece</a>
+<b>Edição genômica:</b> modificação dirigida do DNA por CRISPR etc.; quando não insere DNA externo, pode situar a variedade fora da regra de OGM no Brasil — parte do valor regulatório da plataforma. <a href="#sec-planta" class="refback">→ onde decide</a></p>
+</div>
+
+<h2 id="sec-demonstrado">O que já foi demonstrado</h2>
+<p>Em um estudo de 2024, bagaço de cana tratado por imersão prolongada em etanol originou hard carbon com área superficial específica de aproximadamente 19 m²/g, contra aproximadamente 407 m²/g para o material obtido de bagaço não tratado. Em meia-célula com eletrólito polimérico poroso biodegradável, o material tratado apresentou capacidade reversível de cerca de 212 mAh/g a 0,5 A/g e foi testado por 300 ciclos, com perda inicial aproximada de 17% <a href="#ref-1" class="refcite" id="cite-1">[1]</a>. Esses valores são resultados de uma rota específica e não descrevem uma propriedade universal do bagaço.</p>
+<p>Outro estudo produziu carbono poroso dopado com enxofre a partir de bagaço. Na configuração para íon-sódio, o material apresentou 505,8 mAh/g a 0,1 A/g após 100 ciclos e 108 mAh/g a 5 A/g após 500 ciclos <a href="#ref-2" class="refcite" id="cite-2">[2]</a>. Esse resultado demonstra o efeito de uma <em>dopagem deliberada</em>; não demonstra que o teor natural de enxofre do bagaço produza o mesmo efeito. Por isso, enxofre intrínseco não figuraria como alvo primário da fase piloto.</p>
+<p>Uma meta-análise baseada em 149 estudos usou modelos de aprendizado de máquina para relacionar propriedades da lignina e desempenho do hard carbon. O melhor modelo apresentou R² de até 0,99 no treinamento e 0,60 no teste. A análise identificou o teor e a estrutura da lignina como variáveis importantes, mas a correlação agregada não prova causalidade. O estudo também apontou a faixa de 1000–1400 °C como relevante para otimização em muitos dos dados reunidos <a href="#ref-3" class="refcite" id="cite-3">[3]</a>.</p>
+<p>Em bagaço de cana, a remoção de impurezas da lignina recuperada alterou de forma mensurável o desempenho. O hard carbon produzido de lignina alcalina bruta apresentou capacidade reversível máxima de 198,5 mAh/g e ICE máxima de 60,2%. Após purificação por extração com solvente, os valores chegaram a 277,5 mAh/g e 76,1%, respectivamente. O estudo avaliou temperaturas de carbonização de 1000–1400 °C e taxas de aquecimento de 1–8 °C/min, mantendo 2 h na temperatura final <a href="#ref-4" class="refcite" id="cite-4">[4]</a>. Esse experimento variou a pureza do precursor, não o genótipo da cana.</p>
+
+<h2 id="sec-indireta">O que é evidência indireta</h2>
+<p>A edição de <i>SoLIM</i> em cana-de-açúcar cultivar KK3 foi demonstrada em 2024. As linhas editadas apresentaram 9,74–51,46% menos lignina que o tipo selvagem; a razão S/G variou de 0,23 a 0,49, enquanto o tipo selvagem apresentou 0,22 <a href="#ref-5" class="refcite" id="cite-5">[5]</a>. O estudo avaliou parede celular e recalcitrância para sacarificação, não a produção de hard carbon. Portanto, <i>SoLIM</i> é um candidato exploratório, não um alvo já validado para bateria.</p>
+<p>Em paper mulberry, a mutação de <i>F5H</i> por CRISPR/Cas9 aumentou a capacidade de adsorção de um carbono poroso derivado de lignocelulose <a href="#ref-6" class="refcite" id="cite-6">[6]</a>. Esse resultado apoia a ideia de que a biossíntese da lignina pode influenciar o carbono produzido, mas a espécie, a aplicação e o desfecho são diferentes. A evidência não sustenta concluir diretamente que editar <i>F5H</i> em cana aumentaria a capacidade de armazenamento de sódio.</p>
+<p>A literatura sobre cana-energia sustenta o uso de materiais de alta fibra como fonte de biomassa, mas produtividade, lignina, cinzas, umidade e qualidade do material variam com genótipo, ambiente e data de colheita <a href="#ref-7" class="refcite" id="cite-7">[7]</a> <a href="#ref-8" class="refcite" id="cite-8">[8]</a>. A relação entre essas variáveis agronômicas e o desempenho de hard carbon ainda precisa ser medida sob um protocolo comum.</p>
+
+<h2>Cadeia de projeto e limite de causalidade</h2>
+<div class="cadeia">
+  <div class="bloco"><b>Material-alvo</b><span>Hard carbon para Na-ion: capacidade, ICE, estabilidade e porosidade</span></div>
+  <div class="seta"><small>define</small>&#8594;</div>
+  <div class="bloco"><b>Métricas</b><span>Descritores eletroquímicos e estruturais, com protocolo fixo</span></div>
+  <div class="seta"><small>orienta</small>&#8594;</div>
+  <div class="bloco"><b>Traços</b><span>Lignina, cinzas, hemicelulose, rendimento e fibra</span></div>
+  <div class="seta"><small>limitado por</small>&#8594;</div>
+  <div class="bloco"><b>Germoplasma</b><span>Cana-energia e materiais públicos disponíveis</span></div>
+</div>
+<p class="legenda">A direção do projeto é uma engenharia reversa. O material define as métricas; as métricas orientam os traços a medir; o germoplasma disponível delimita o espaço de soluções. A cadeia física corre no sentido oposto: planta → biomassa → pré-tratamento → pirólise → eletrodo → célula.</p>
+
+<h2 id="sec-carbono">Ficha de qualificação — lado do carbono</h2>
+<div class="table-wrap"><table>
+<thead><tr><th scope="col">Parâmetro</th><th scope="col">Medição</th><th scope="col">Critério proposto</th></tr></thead>
+<tbody>
+<tr><td>Capacidade reversível</td><td>Meia-célula contra Na/Na⁺</td><td>Comparação contra controle de referência, sob a mesma corrente, carregamento e janela de tensão; 300–350 mAh/g como meta exploratória, não como benchmark universal.</td></tr>
+<tr><td>Eficiência coulômbica inicial</td><td>Primeiro ciclo completo</td><td>Maximização da ICE como objetivo; qualquer meta acompanhada da declaração de massa ativa, eletrólito, separador e janela de tensão.</td></tr>
+<tr><td>Porosidade</td><td>BET, SAXS e densidade esquelética por hélio</td><td>Redução da área superficial acessível; quantificação da fração de poros fechados, com método declarado.</td></tr>
+<tr><td>Estrutura</td><td>DRX, Raman e, se possível, microscopia eletrônica</td><td>Relato de d<sub>002</sub>, I<sub>D</sub>/I<sub>G</sub> e distribuição das medidas; nenhum descritor único tratado como explicação causal.</td></tr>
+<tr><td>Célula completa</td><td>Na<sub>3</sub>V<sub>2</sub>(PO<sub>4</sub>)<sub>3</sub>//HC, após a triagem</td><td>Validação somente depois da meia-célula, contra controle definido antes do experimento; protocolo completo de célula NVP//HC publicado pelo grupo Zanin/UNICAMP <a href="#ref-9" class="refcite" id="cite-9">[9]</a>.</td></tr>
+</tbody></table></div>
+<p class="note">A literatura mostra que capacidade, ICE e porosidade podem melhorar ou piorar em conjunto — e correlações entre elas, extraídas de dados heterogêneos, são condicionais a menos que as variáveis sejam controladas de forma independente <a href="#ref-10" class="refcite" id="cite-10">[10]</a>. Para ser interpretável, toda comparação precisaria de composição do eletrodo, carregamento areal, eletrólito, janela de tensão, corrente, temperatura, tempo de repouso e número de ciclos congelados.</p>
+<p class="note">Horizonte de aplicação: armazenamento estacionário (BESS) — a química íon-sódio já se comercializa em escala global — com expansão posterior à mobilidade.</p>
+
+<h2 id="sec-planta">Ficha de qualificação — lado da planta</h2>
+<div class="table-wrap"><table>
+<thead><tr><th scope="col">Variável</th><th scope="col">O que a literatura sustenta</th><th scope="col">Uso no piloto</th></tr></thead>
+<tbody>
+<tr><td>Lignina</td><td>Teor e estrutura foram importantes em uma análise agregada de 149 estudos <a href="#ref-3" class="refcite">[3]</a>; em cana, a edição de <i>SoLIM</i> reduziu lignina em 9,74–51,46% em linhas de KK3 <a href="#ref-5" class="refcite">[5]</a>.</td><td>Medição de teor, composição e S/G; edição tratada como etapa posterior — a plataforma de edição genômica em cana já é consolidada <a href="#ref-11" class="refcite" id="cite-11">[11]</a>.</td></tr>
+<tr><td>Hemicelulose e pureza</td><td>Purificar lignina alcalina de bagaço elevou a capacidade de 198,5 para 277,5 mAh/g e a ICE de 60,2 para 76,1% em uma rota específica <a href="#ref-4" class="refcite">[4]</a>.</td><td>Controles de pré-tratamento; rendimento de carbono quantificado.</td></tr>
+<tr><td>Cinzas e minerais</td><td>São variáveis plausíveis de processo, mas o efeito quantitativo específico sobre hard carbon de diferentes genótipos de cana ainda não foi estabelecido neste documento.</td><td>Medição de cinzas, K e Si antes e depois do pré-tratamento; nenhum efeito presumido sem controle.</td></tr>
+<tr><td>Enxofre</td><td>Dopagem exógena de carbono de bagaço gerou alto desempenho em uma rota própria <a href="#ref-2" class="refcite">[2]</a>. Isso não equivale ao enxofre natural da planta.</td><td>Variável exploratória; distinção entre “teor intrínseco” e “dopagem deliberada”.</td></tr>
+<tr><td>Fibra e biomassa</td><td>Cana-energia é um chassi de alta fibra <a href="#ref-7" class="refcite">[7]</a>, mas produtividade e composição dependem de ambiente, genótipo e colheita <a href="#ref-8" class="refcite">[8]</a>.</td><td>Rendimento de biomassa por área e composição do mesmo lote usado no carbono.</td></tr>
+<tr><td>Feruloilação/BAHD</td><td>Silenciamento de uma aciltransferase BAHD em cana foi associado a maior digestibilidade <a href="#ref-12" class="refcite" id="cite-12">[12]</a>; o estudo não validou hard carbon.</td><td>Hipótese distante, não alvo primário.</td></tr>
+</tbody></table></div>
+
+<h2 id="sec-lacuna">Lacuna e teste mínimo</h2>
+<div class="lacuna">
+<p><b>Afirmação de lacuna:</b> nas buscas realizadas até 24/09/2026, não encontrei um estudo que varie explicitamente o genótipo de cana e meça o hard carbon resultante sob um protocolo congelado de pré-tratamento, carbonização e ensaio eletroquímico.</p>
+<p style="margin-bottom:0">Isso é uma afirmação sobre o escopo da busca, não uma prova de inexistência. O resultado mais próximo encontrado variou a pureza da lignina de bagaço, sem variar o genótipo <a href="#ref-4" class="refcite">[4]</a>.</p>
+</div>
+<div class="piloto">
+<b>Fase piloto — antes de qualquer edição</b>
+<p>Um primeiro ciclo reuniria 6–12 materiais de germoplasma, incluindo cana convencional e cana-energia, com duas janelas de colheita. Precursor e hard carbon seriam produzidos em lotes independentes, com uma única rota de lavagem, uma única temperatura e um único tempo de residência. As medidas abrangeriam composição do bagaço, cinzas, rendimento de carbono, BET, DRX/Raman, ICE e capacidade.</p>
+<p style="margin-bottom:0">O desenho pediria replicações biológicas independentes, replicações técnicas eletroquímicas e controles de celulose, lignina de pureza conhecida e mistura de cinzas. Se o sinal de genótipo sobreviver ao controle de lote e ao protocolo congelado, então a edição de lignina passa a ter justificativa experimental.</p>
+</div>
+
+<h2>Critério de sucesso e riscos</h2>
+<p>Nesta proposta, sucesso significaria uma associação reproduzível entre uma característica mensurável do precursor e um conjunto de respostas: ICE, capacidade após número fixo de ciclos, rendimento de carbono e produtividade de biomassa — não a capacidade máxima isolada.</p>
+<p>Alterar lignina pode melhorar a processabilidade e, ao mesmo tempo, reduzir resistência da parede celular, produtividade, estabilidade ou rendimento. A proposta, por isso, trata desempenho eletroquímico e desempenho agronômico como objetivos simultâneos, não como etapas independentes.</p>
+
+<div class="quem">
+<h2>Quem escreve e o que pede</h2>
+<p>Sou Alexandre Sah, cidadão sem formação em biotecnologia ou engenharia de materiais. Este documento é uma proposta de investigação baseada em literatura aberta e distingue resultados demonstrados de hipóteses ainda não testadas.</p>
+<p>Peço uma avaliação crítica da hipótese, correções bibliográficas e indicação de grupos que trabalhem na interface entre biomassa, hard carbon, baterias de íon-sódio e genética de cana.</p>
+<p>Contato: <a href="mailto:alexandre.sah@zmem.org">alexandre.sah@zmem.org</a> · revisão bibliográfica: <time datetime="2026-09-24">24/09/2026</time></p>
+</div>
+
+<h2>Referências primárias e de apoio</h2>
+<ol class="refs">
+<li id="ref-1">Mohit; Hashmi, S.A. “Hard carbon anode derived from pre-treated bio-waste sugarcane bagasse for high capacity sodium-ion battery fabricated with bio-degradable porous polymer electrolyte.” <i>Journal of Energy Storage</i> 83 (2024): 110694. <a href="https://doi.org/10.1016/j.est.2024.110694" target="_blank">doi:10.1016/j.est.2024.110694</a> <a href="#cite-1" class="refback" title="voltar à citação">↩</a></li>
+<li id="ref-2">Wan, H.; Hu, X. “Sulfur-doped honeycomb-like carbon with outstanding electrochemical performance as an anode material for lithium and sodium ion batteries.” <i>Journal of Colloid and Interface Science</i> 558 (2020): 242–250. <a href="https://doi.org/10.1016/j.jcis.2019.09.124" target="_blank">doi:10.1016/j.jcis.2019.09.124</a> <a href="#cite-2" class="refback" title="voltar à citação">↩</a></li>
+<li id="ref-3">Li, J. et al. “Unveiling the role of lignin in biomass-derived hard carbon anodes via machine learning.” <i>Journal of Power Sources</i> 631 (2025): 236323. <a href="https://doi.org/10.1016/j.jpowsour.2025.236323" target="_blank">doi:10.1016/j.jpowsour.2025.236323</a> <a href="#cite-3" class="refback" title="voltar à citação">↩</a></li>
+<li id="ref-4">Dayarathne, N.K. et al. “Removal of hemicellulose from alkaline lignin improved electrochemical performance of hard carbon for sodium-ion battery application.” <i>Materials Futures</i> 5 (2026): 015102. <a href="https://doi.org/10.1088/2752-5724/ae1522" target="_blank">doi:10.1088/2752-5724/ae1522</a> <a href="#cite-4" class="refback" title="voltar à citação">↩</a></li>
+<li id="ref-5">Laksana, C.; Sophiphun, O.; Chanprame, S. “Lignin reduction in sugarcane by performing CRISPR/Cas9 site-direct mutation of SoLIM transcription factor.” <i>Plant Science</i> 340 (2024): 111987. <a href="https://doi.org/10.1016/j.plantsci.2024.111987" target="_blank">doi:10.1016/j.plantsci.2024.111987</a> <a href="#cite-5" class="refback" title="voltar à citação">↩</a></li>
+<li id="ref-6">Xu, Y. et al. “CRISPR/Cas9-mediated mutation of FERULATE 5-HYDROXYLASE enhances adsorption capacity of lignocellulose-based porous carbon from paper mulberry.” <i>Horticulture Research</i> 11 (2024): uhae124. <a href="https://doi.org/10.1093/hr/uhae124" target="_blank">doi:10.1093/hr/uhae124</a> <a href="#cite-6" class="refback" title="voltar à citação">↩</a></li>
+<li id="ref-7">Matsuoka, S. et al. “Energy cane: its concept, development, characteristics, and prospects.” <i>Advances in Botany</i> (2014): 597275. <a href="https://doi.org/10.1155/2014/597275" target="_blank">doi:10.1155/2014/597275</a> <a href="#cite-7" class="refback" title="voltar à citação">↩</a></li>
+<li id="ref-8">Knoll, J.E. et al. “Harvest date effects on biomass quality and ethanol yield of new energycane genotypes in the Southeast USA.” <i>Biomass and Bioenergy</i> 56 (2013): 147–156. <a href="#cite-8" class="refback" title="voltar à citação">↩</a></li>
+<li id="ref-9">Garcia, N.G.; Real, C.G.; Aguiar dos Santos, J.P.; Gonçalves, J.M.; Nunes, W.; Da Silva, L.M.; Zanin, H. “Comprehensive analysis of the state of charge and health of Na3V2(PO4)3 cathodes for sodium-ion batteries.” <i>Journal of Energy Storage</i> 141, Pt C (2026): 119201. <a href="https://doi.org/10.1016/j.est.2025.119201" target="_blank">doi:10.1016/j.est.2025.119201</a> <a href="#cite-9" class="refback" title="voltar à citação">↩</a></li>
+<li id="ref-10">de Mesquita, J.P. et al. “Surface chemical heterogeneity governing sodium storage in hard carbon anodes.” <i>Journal of Energy Chemistry</i> (2026, in press). <a href="https://doi.org/10.1016/j.jechem.2026.08.107" target="_blank">doi:10.1016/j.jechem.2026.08.107</a> <a href="#cite-10" class="refback" title="voltar à citação">↩</a></li>
+<li id="ref-11">Molinari, M.D.C.; Fuganti-Pagliarini, R.; Freitas, N.C.; Abbad, S.V.; Molinari, H.B.C. “Cutting-edge genome editing in sugarcane and sugar crops: a comprehensive overview.” <i>Sugar Tech</i> 27(1) (2025): 44–57. <a href="#cite-11" class="refback" title="voltar à citação">↩</a></li>
+<li id="ref-12">de Souza, W.R. et al. “Silencing of a BAHD acyltransferase in sugarcane increases biomass digestibility.” <i>Biotechnology for Biofuels</i> 12 (2019): 111. <a href="#cite-12" class="refback" title="voltar à citação">↩</a></li>
+</ol>
+<p class="note">As referências [5], [6] e [12] demonstram efeitos em parede celular, lignina, adsorção ou digestibilidade; não são evidência direta de desempenho de hard carbon para bateria. Essa distinção foi explicitada para evitar extrapolação indevida. Se algo aqui redescobrir trabalho existente ou contiver erro bibliográfico, o aviso é bem-vindo — a página será atualizada com o crédito devido.</p>
+</div>
+</body>
+</html>
